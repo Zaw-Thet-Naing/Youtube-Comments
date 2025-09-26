@@ -76,3 +76,28 @@ void writeToOutput(const string& filename, const vector<Video>& videos){
     }
 }
 
+int main(){
+
+    string filename = "input.txt";
+    string filename2 = "input.txt";                                                        //declare file names
+
+    vector<Video> videos = fetchVideos(filename);                                           //stores returned vector inside videos
+
+    displayVideo(videos);
+
+    int videoNumber = -1;
+
+    while (true){
+
+    cout << "Which video would you want to comment on? Pick a number between 1 - " << videos.size() << "\n";        //asks user which video would they like to comment on
+    cin >> videoNumber;
+
+    if (videoNumber >= 1 && videoNumber <= videos.size()){                      //exits loop if number is within range
+        break;
+    }
+
+    cout << "Invalid number, please try again \n";                              //states that the number picked by the user is out of range
+
+    }
+}
+
