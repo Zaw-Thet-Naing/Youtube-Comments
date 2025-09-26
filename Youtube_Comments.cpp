@@ -99,5 +99,13 @@ int main(){
     cout << "Invalid number, please try again \n";                              //states that the number picked by the user is out of range
 
     }
+
+        cout << "Please enter your comment" << endl;
+    string comment;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');                        //asks the user to input comment 
+    getline (cin,comment);
+    videos[videoNumber - 1].comments = comment;
+    
+    writeToOutput(filename2, videos);  
 }
 
