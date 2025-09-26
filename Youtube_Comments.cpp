@@ -55,3 +55,10 @@ while (getline(inputFile, line)){
 return videos;
 
 }
+
+void displayVideo(const vector<Video>& videos){
+    for (int i = 0; i < videos.size(); i++){                                                    //function to display list of video titles and links
+        cout << (i + 1) << ". " << videos[i].title << " | Link: " << videos[i].link << "\n";
+    }
+}
+
