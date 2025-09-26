@@ -62,3 +62,17 @@ void displayVideo(const vector<Video>& videos){
     }
 }
 
+void writeToOutput(const string& filename, const vector<Video>& videos){
+    ofstream outputFile(filename);                                                        
+    if (!outputFile.is_open()){
+        throw runtime_error("Unable to open output file");
+    }
+
+    int list = 1;                                                                           //function to write information onto the output text file
+    for (const auto& video : videos){
+        outputFile << list << ". " << video.link << "," << video.title << "\n";
+        outputFile << "Comments: " << video.comments << "\n";
+        list ++;
+    }
+}
+
