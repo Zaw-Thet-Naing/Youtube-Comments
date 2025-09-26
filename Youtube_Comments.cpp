@@ -16,3 +16,8 @@ struct Video {
 vector<Video> fetchVideos(const string& filename){
     ifstream inputFile(filename);                       // vector store videos acquired from input txt file
     vector<Video> videos;
+}
+
+if (!inputFile){
+    throw runtime_error("Could not open file!");        // throws a runtime error if file is failed to open
+}
